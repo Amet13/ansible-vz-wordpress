@@ -1,0 +1,5 @@
+---
+- name: Create typical Virtuozzo containers
+  hosts: virtuozzo-hostnodes
+  roles:
+    - createct

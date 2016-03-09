@@ -1,0 +1,5 @@
+---
+---
+- name: start containers
+  command: /usr/sbin/vzpkg start {{ name }}
+

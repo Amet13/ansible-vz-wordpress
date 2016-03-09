@@ -1,0 +1,10 @@
+---
+ostemplate: centos-7-x86_64
+osconfig: vswap.256MB
+prlctl: /usr/bin/prlctl
+
+name: wordpress-1
+ip: 192.168.0.161
+ns: 192.168.0.1
+hostname: "{{ name }}.localdomain"
+password: 123456
