@@ -1,14 +1,14 @@
 ansible-vz-wordpress
 ====================
-Ansible playbook создает контейнер на базе Virtuozzo 7 и развертывает окружение на базе Nginx+PHP-FPM+MariaDB+WordPress
+Playbook создает контейнер на базе Virtuozzo 7 и развертывает в нем окружение на базе Nginx+PHP-FPM+MariaDB+WordPress
 
 Как это работает?
 -----------------
 На хостноде с Virtuozzo 7 развертывается контейнер.
 В контейнере устанавливается необходимое окружение для работы WordPress.
-Все что остается сделать, это перейти по ссылке и задать логин и пароль администратора сайта.
 
-https://raw.githubusercontent.com/Amet13/ansible-vz-wordpress/master/wordpress.png
+Все что остается сделать, это перейти по ссылке и задать логин и пароль администратора сайта.
+![](https://raw.githubusercontent.com/Amet13/ansible-vz-wordpress/master/wordpress.png)
 
 Планы
 -----
