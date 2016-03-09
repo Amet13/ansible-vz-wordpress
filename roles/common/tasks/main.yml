@@ -16,6 +16,3 @@
   with_items:
     - httpd
     - httpd-tools
-    - sendmail
-    - sendmail-cf
-    - cyrus-sasl
