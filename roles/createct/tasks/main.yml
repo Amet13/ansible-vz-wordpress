@@ -20,4 +20,3 @@
 - name: Add CT to autostart
   command: "{{ prlctl }} set {{ name }} --onboot yes"
   notify: start container
-  notify: add ssh key

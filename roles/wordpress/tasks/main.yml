@@ -1,9 +1,9 @@
 ---
 - name: Download WordPress
-  get_url: url=https://wordpress.org/latest.tar.gz dest=/tmp/wordpress-latest.tar.gz
+  get_url: url=https://wordpress.org/latest.tar.gz dest=/srv/wordpress-latest.tar.gz
 
 - name: Extract archive
-  command: /bin/tar xvf /tmp/wordpress-latest.tar.gz creates=/srv/wordpress
+  command: chdir=/srv/ /bin/tar xvf /srv/wordpress-latest.tar.gz creates=/srv/wordpress
 
 - name: Add group "wordpress"
   group: name=wordpress
