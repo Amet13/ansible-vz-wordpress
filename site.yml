@@ -1,4 +1,11 @@
 ---
+- name: Create typical Virtuozzo container
+  hosts: vz
+  roles:
+    - createct
+
+# This playbook from github with small fixes
+# https://github.com/ansible/ansible-examples/tree/master/wordpress-nginx_rhel7
 - name: Install WordPress, MariaDB, Nginx, and PHP-FPM
   hosts: wordpress
   roles:

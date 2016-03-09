@@ -1,3 +1,9 @@
 ---
-- name: start containers
+- name: start container
   command: "{{ prlctl }} start {{ name }}"
+
+- name: add ssh key
+  hosts: 127.0.0.1
+  connection: local
+  yum: name=sshpass state=present
+  command: /usr/bin/sshpass -p {{ password }} ssh-copy-id root@{{ ip }}

@@ -13,7 +13,9 @@
  *
  * @package WordPress
  */
+
 // ** MySQL settings - You can get this info from your web host ** //
+
 /** The name of the database for WordPress */
 define('DB_NAME', '{{ wp_db_name }}');
 /** MySQL database username */
@@ -26,17 +28,7 @@ define('DB_HOST', 'localhost');
 define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
-/**#@+
- * Authentication Unique Keys and Salts.
- *
- * Change these to different unique phrases!
- * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
- * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
- *
- * @since 2.6.0
- */
-{{ wp_salt.stdout }}
-/**#@-*/
+
 /**
  * WordPress Database Table prefix.
  *
@@ -44,6 +36,7 @@ define('DB_COLLATE', '');
  * prefix. Only numbers, letters, and underscores please!
  */
 $table_prefix  = 'wp_';
+
 /**
  * WordPress Localized Language, defaults to English.
  *
@@ -53,6 +46,7 @@ $table_prefix  = 'wp_';
  * language support.
  */
 define('WPLANG', '');
+
 /**
  * For developers: WordPress debugging mode.
  *
@@ -61,13 +55,17 @@ define('WPLANG', '');
  * in their development environments.
  */
 define('WP_DEBUG', false);
+
 /** Disable Automatic Updates Completely */
-define( 'AUTOMATIC_UPDATER_DISABLED', {{auto_up_disable}} );
+define( 'AUTOMATIC_UPDATER_DISABLED', false);
+
 /** Define AUTOMATIC Updates for Components. */
-define( 'WP_AUTO_UPDATE_CORE', {{core_update_level}} );
+define( 'WP_AUTO_UPDATE_CORE', true);
+
 /* That's all, stop editing! Happy blogging. */
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
+
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');

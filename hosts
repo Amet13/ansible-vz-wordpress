@@ -1,5 +1,4 @@
-# This is virtuozzo hostnodes
-[virtuozzo-hostnodes]
+[vz]
 192.168.0.150
 
 [wordpress]

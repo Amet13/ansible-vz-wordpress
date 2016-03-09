@@ -1,12 +1,10 @@
 ---
-- name: Install MariaDB package
+- name: Install MariaDB and deps
   yum: name={{ item }} state=installed
   with_items:
    - mariadb
    - mariadb-server
    - MySQL-python
-   - libselinux-python
-   - libsemanage-python
 
 - name: Create Mysql configuration file
   template: src=my.cnf.j2 dest=/etc/my.cnf

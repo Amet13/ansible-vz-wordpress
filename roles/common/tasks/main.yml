@@ -10,3 +10,12 @@
 
 - name: Create the GPG key for EPEL
   copy: src=RPM-GPG-KEY-EPEL-7 dest=/etc/pki/rpm-gpg
+
+- name: Remove unnecessary packages
+  yum: name={{ item }} state=absent
+  with_items:
+    - httpd
+    - httpd-tools
+    - sendmail
+    - sendmail-cf
+    - cyrus-sasl

@@ -1,22 +1,23 @@
 ---
-- name: Update templates cache
+- name: Update template cache
   command: "/usr/sbin/vzpkg update cache {{ ostemplate }}"
 
-- name: Create virtuozzo containers
+- name: Create virtuozzo container
   command: "{{ prlctl }} create {{ name }} --config {{ osconfig }} --vmtype=ct"
 
-- name: Setup IP's, nameservers, hostnames
+- name: Setup IP
   command: "{{ prlctl }} set {{ name }} --ipadd {{ ip }}"
 
-- name: Setup nameservers
+- name: Setup nameserver
   command: "{{ prlctl }} set {{ name }} --nameserver {{ ns }}"
 
-- name: Setup hostnames
+- name: Setup hostname
   command: "{{ prlctl }} set {{ name }} --hostname {{ hostname }}"
 
-- name: Add root passwords
+- name: Add root password
   command: "{{ prlctl }} set {{ name }} --userpasswd root:{{ password }}"
 
-- name: Add CT's to autostart
+- name: Add CT to autostart
   command: "{{ prlctl }} set {{ name }} --onboot yes"
-  notify: start containers
+  notify: start container
+  notify: add ssh key
