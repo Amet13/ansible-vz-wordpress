@@ -1,0 +1,9 @@
+---
+- name: Install sshpass
+  yum: name=sshpass state=present
+
+- name: Delete old keys
+  command: /usr/bin/ssh-keygen -R {{ ip }}
+
+- name: Add ssh key to container
+  command: /usr/bin/sshpass -p {{ password }} ssh-copy-id root@{{ ip }} -o "StrictHostKeyChecking no"
