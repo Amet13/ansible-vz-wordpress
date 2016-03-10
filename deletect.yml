@@ -1,0 +1,5 @@
+---
+- name: Delete Virtuozzo container
+  hosts: vz
+  roles:
+    - deletect
