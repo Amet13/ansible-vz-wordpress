@@ -15,7 +15,7 @@ Playbook создает контейнер на базе Virtuozzo 7 и разв
 Создать один контейнер с указанным IP-адресом и hostname:
 ```bash
 cd /etc/ansible
-echo 192.168.0.1 >> hosts
+echo 192.168.0.161 >> hosts
 ansible-playbook site.yml -e "name=wordpress-1 ip=192.168.0.161"
 ```
 
