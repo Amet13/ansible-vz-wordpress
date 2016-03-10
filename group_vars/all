@@ -3,6 +3,7 @@
 ostemplate: centos-7-x86_64
 osconfig: vswap.256MB
 prlctl: /usr/bin/prlctl
+updatecache: no
 
 # Container settings
 name: wordpress-1

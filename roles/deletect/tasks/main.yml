@@ -1,0 +1,6 @@
+---
+- name: Stop virtuozzo container
+  command: "{{ prlctl }} stop {{ name }} --kill"
+
+- name: Delete container
+  command: "{{ prlctl }} delete {{ name }}"

@@ -2,6 +2,7 @@
 - name: Create typical Virtuozzo container
   hosts: vz
   roles:
+    - deletect
     - createct
 
 - name: Add container to ansible management
