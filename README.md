@@ -10,6 +10,26 @@ Playbook создает контейнер на базе Virtuozzo 7 и разв
 Все что остается сделать, это перейти по ссылке и задать логин и пароль администратора сайта.
 ![](https://raw.githubusercontent.com/Amet13/ansible-vz-wordpress/master/wordpress.png)
 
+Запуск
+------
+Создать один контейнер с указанным IP-адресом и hostname:
+```bash
+cd /etc/ansible
+echo 192.168.0.1 >> hosts
+ansible-playbook site.yml -e "name=wordpress-1 ip=192.168.0.161"
+```
+
+Создать несколько контейнеров:
+```bash
+cd /etc/ansible
+./creatects.sh
+How much containers will be created: 3
+Available IP's: 5 you want to create 3 containers. Continue.
+...
+```
+
+Если создаем контейнеры скриптом, то добавлять адреса в hosts не нужно, это сделает сам скрипт.
+
 Планы
 -----
 * реализовать множественное создание контейнеров с выделенным пулом IP-адресов
