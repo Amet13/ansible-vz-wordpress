@@ -12,17 +12,17 @@ Playbook создает контейнер на базе Virtuozzo 7 и разв
 
 Запуск
 ------
-Создать один контейнер с указанным IP-адресом и hostname:
+Создать один контейнер вручную с указанным IP-адресом и hostname:
 ```bash
 cd /etc/ansible
 echo 192.168.0.161 >> hosts
-ansible-playbook site.yml -e "name=wordpress-1 ip=192.168.0.161"
+ansible-playbook site.yml -e "name=wordpress-161 ip=192.168.0.161"
 ```
 
-Создать несколько контейнеров:
+Создать несколько контейнеров автоматически:
 ```bash
 cd /etc/ansible
-./creatects.sh
+./create_cts.sh
 How much containers will be created: 3
 Available IP's: 5 you want to create 3 containers. Continue.
 ...
@@ -31,11 +31,9 @@ Available IP's: 5 you want to create 3 containers. Continue.
 Удалить контейнер:
 ```bash
 cd /etc/ansible
-ansible-playbook deletect.yml -e "name=wordpress-1"
-sed -i '/192.168.0.161/d' hosts
+./delete_ct.sh
+sed -i '/нужный_IP/d' hosts
 ```
-
-Если создаем контейнеры скриптом, то добавлять адреса в hosts не нужно, это сделает сам скрипт.
 
 Лицензия
 --------

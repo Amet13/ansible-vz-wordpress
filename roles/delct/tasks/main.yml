@@ -1,5 +1,5 @@
 ---
-- name: Stop virtuozzo container
+- name: Forcible stop container
   command: "{{ prlctl }} stop {{ name }} --kill"
 
 - name: Delete container

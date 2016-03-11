@@ -6,9 +6,6 @@ prlctl: /usr/bin/prlctl
 updatecache: no
 
 # Container settings
-# Default hostname and IP
-name: wordpress-1
-ip: 192.168.0.161
 ns: 192.168.0.1
 hostname: "{{ name }}.localdomain"
 password: 123456

@@ -2,6 +2,7 @@
 
 read -p "How much containers will be created: " CTS
 
+# IP pool
 BEGIN=192.168.0.161
 END=192.168.0.170
 
@@ -10,6 +11,7 @@ NET1=${BEGIN#$SUBNET.}
 NET2=${END#$SUBNET.}
 FREEIP=0
 ARRAY=()
+
 HOSTS=/etc/ansible/hosts
 PLAYBOOK=site.yml
 
