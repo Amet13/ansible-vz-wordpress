@@ -32,7 +32,8 @@ Available IP's: 5 you want to create 3 containers. Continue.
 ```bash
 cd /etc/ansible
 ./delete_ct.sh
-sed -i '/нужный_IP/d' hosts
+Print container name: wordpress-161
+...
 ```
 
 Лицензия
