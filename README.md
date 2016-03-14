@@ -7,9 +7,6 @@ Playbook создает контейнер на базе Virtuozzo 7 и разв
 На хостноде с Virtuozzo 7 развертывается контейнер.
 В контейнере устанавливается необходимое окружение для работы WordPress.
 
-Все что остается сделать, это перейти по ссылке и задать логин и пароль администратора сайта.
-![](https://raw.githubusercontent.com/Amet13/ansible-vz-wordpress/master/wordpress.png)
-
 Запуск
 ------
 Создать один контейнер вручную с указанным IP-адресом и hostname:
@@ -18,6 +15,7 @@ cd /etc/ansible
 echo "192.168.0.161 name=wordpress-161" >> hosts
 ansible-playbook site.yml -e "name=wordpress-161 ip=192.168.0.161"
 ```
+Все что остается сделать, это перейти по ссылке `http://$name.localdomain` и задать логин/пароль администратора сайта.
 
 Создать несколько контейнеров автоматически:
 ```bash
@@ -89,8 +87,7 @@ Print container name: wordpress-161
 │       │   └── main.yml
 │       └── templates
 │           └── wp-config.php
-├── site.yml
-└── wordpress.png
+└── site.yml
 ```
 
 Лицензия
