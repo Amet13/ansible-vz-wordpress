@@ -13,7 +13,7 @@ FREEIP=0
 ARRAY=()
 
 HOSTS=/etc/ansible/hosts
-PLAYBOOK=site.yml
+PLAYBOOK=createct.yml
 
 for ((i=NET1; i<=NET2; i++)); do
     IP=${SUBNET}.$i

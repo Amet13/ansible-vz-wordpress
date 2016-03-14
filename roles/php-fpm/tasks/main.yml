@@ -1,5 +1,5 @@
 ---
-- name: Install php-fpm and deps 
+- name: Install php-fpm and dependencies
   yum: name={{ item }} state=present
   with_items:
     - php

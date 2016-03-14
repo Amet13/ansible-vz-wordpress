@@ -10,6 +10,4 @@
   with_items:
     - httpd
     - httpd-tools
-
-- name: Upgrade all packages
-  yum: name=* state=latest
+  notify: update packages
