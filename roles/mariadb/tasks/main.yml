@@ -1,6 +1,6 @@
 ---
 - name: Install MariaDB
-  yum: name={{ item }} state=installed
+  yum: name={{ item }} state=present
   with_items:
    - mariadb
    - mariadb-server
@@ -12,3 +12,6 @@
 - name: Create MariaDB log file
   file: path=/var/log/mysqld.log state=touch owner=mysql group=mysql mode=0775
   notify: restart mariadb
+
+- name: Start MariaDB service
+  service: name=mariadb state=started enabled=yes
