@@ -7,3 +7,6 @@
 
 - name: Add ssh key to container
   command: /usr/bin/sshpass -p {{ password }} ssh-copy-id root@{{ ip }} -o "StrictHostKeyChecking no"
+
+- name: Add host to inventory
+  lineinfile: dest=/etc/ansible/hosts line="{{ ip }} name={{ name }}"

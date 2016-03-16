@@ -13,7 +13,6 @@ Playbook создает контейнер на базе Virtuozzo 7 и разв
 ------------------------------------
 ```bash
 cd /etc/ansible
-echo "192.168.0.161 name=wordpress-161" >> hosts
 ansible-playbook createct.yml -e "name=wordpress-161 ip=192.168.0.161"
 ```
 Все что остается сделать, это перейти по ссылке `http://wordpress-161.localdomain` и задать логин/пароль администратора сайта.

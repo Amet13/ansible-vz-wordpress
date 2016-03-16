@@ -25,16 +25,15 @@ for ((i=NET1; i<=NET2; i++)); do
 done
 
 if [[ $CTS -gt $FREEIP ]]; then
-    echo Available IP\'s: $FREEIP but you want to create $CTS containers. Exiting.
+    echo Available IP\'s: $FREEIP. You want to create $CTS containers. Exiting.
     exit
 else
-    echo  Available IP\'s: $FREEIP you want to create $CTS containers. Continue.
+    echo Available IP\'s: $FREEIP. You want to create $CTS containers. Continue.
 fi
 
 DONE=0
 for i in "${ARRAY[@]}"; do
     ID=`echo $i | cut -f4 -d "."`
-    echo "$i name=wordpress-$ID" >> $HOSTS
     ansible-playbook $PLAYBOOK -e "name=wordpress-$ID ip=$i"
     let "DONE++"
     if [[ $DONE -eq $CTS ]]; then
