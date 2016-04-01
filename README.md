@@ -23,7 +23,7 @@ ansible-playbook createct.yml -e "name=wordpress-161 ip=192.168.0.161"
 cd /etc/ansible
 ./create_cts.sh
 How much containers will be created: 3
-Available IP's: 5 you want to create 3 containers. Continue.
+Available IP's: 5. You want to create 3 containers. Continue.
 ...
 ```
 
