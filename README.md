@@ -1,6 +1,6 @@
 ansible-vz-wordpress
 ====================
-Playbook создает контейнер на базе Virtuozzo 7 и развертывает в нем окружение на базе CentOS 7+Nginx+PHP-FPM+MariaDB+WordPress
+Playbook создает контейнер на базе Virtuozzo 7 и разворачивает в нем окружение на базе CentOS 7+Nginx+PHP-FPM+MariaDB+WordPress
 
 Как это работает?
 -----------------
@@ -9,8 +9,8 @@ Playbook создает контейнер на базе Virtuozzo 7 и разв
 
 Для создания нескольких контейнеров можно использовать скрипт `create_cts.sh`, для удаления одного контейнера — `delete_ct.sh`.
 
-Создать контейнер со всем окружением
-------------------------------------
+Создание контейнера со всем окружением
+--------------------------------------
 ```bash
 cd /etc/ansible
 ansible-playbook createct.yml -e "name=wordpress-161 ip=192.168.0.161"
