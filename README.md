@@ -38,4 +38,4 @@ Print container name: wordpress-161
 
 Лицензия
 --------
-[GNU/GPLv3](http://www.gnu.org/licenses/gpl)
+[GNU GPLv3](http://www.gnu.org/licenses/gpl)
