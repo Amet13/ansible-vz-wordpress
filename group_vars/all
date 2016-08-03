@@ -1,5 +1,5 @@
 ---
-# Virtuozzo 7 settings
+# OpenVZ 7 settings
 ostemplate: centos-7-x86_64
 osconfig: vswap.256MB
 prlctl: /usr/bin/prlctl
