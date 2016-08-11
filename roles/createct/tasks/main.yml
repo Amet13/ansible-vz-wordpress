@@ -3,7 +3,7 @@
   command: "/usr/sbin/vzpkg update cache {{ ostemplate }}"
   when: updatecache == "yes"
 
-- name: Create virtuozzo container
+- name: Create OpenVZ container
   command: "{{ prlctl }} create {{ name }} --config {{ osconfig }} --vmtype=ct"
 
 - name: Setup IP

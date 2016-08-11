@@ -1,5 +1,5 @@
 ---
-- name: Create typical Virtuozzo container
+- name: Create typical OpenVZ container
   hosts: vz
   roles:
     - createct

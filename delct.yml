@@ -1,5 +1,5 @@
 ---
-- name: Delete Virtuozzo container
+- name: Delete OpenVZ container
   hosts: vz
   roles:
     - delct
