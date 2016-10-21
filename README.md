@@ -1,26 +1,39 @@
 ansible-vz-wordpress
 ====================
-Playbook создает контейнер на базе OpenVZ 7 и разворачивает в нем окружение на базе CentOS 7+Nginx+PHP-FPM+MariaDB+WordPress
+This playbook creates OpenVZ-based container with CentOS 7 and Nginx+PHP-FPM+MariaDB+WordPress
 
-Этот Playbook не будет работать с OpenVZ 6, так как управление контейнерами идет через prlctl.
+It doesn't works with OpenVZ 6, because prlctl used by default.
 
-Как это работает?
------------------
-На хостноде с OpenVZ 7 развертывается контейнер.
-В контейнере устанавливается необходимое окружение для работы WordPress.
+How it works?
+-------------
+On OpenVZ 7 host machine creating new container.
+Then installing enviroment for WordPress working.
 
-Для создания нескольких контейнеров можно использовать скрипт `create_cts.sh`, для удаления одного контейнера — `delete_ct.sh`.
+You can use `create_cts.sh` and `delete_ct.sh` scripts for creating and deleting containers.
 
-Создание контейнера со всем окружением
+Variables (see `group_vars/all`)
+--------------------------------
+* ostemplate: centos-7-x86_64
+* osconfig: vswap.256MB
+* prlctl: /usr/bin/prlctl
+* updatecache: no
+* ns: 192.168.0.1
+* hostname: "{{ name }}.localdomain"
+* password: 123456
+* wp_db_name: wordpress
+* wp_db_user: wordpress
+* wp_db_password: secret
+
+Creating new container with enviroment
 --------------------------------------
 ```bash
 cd /etc/ansible
 ansible-playbook createct.yml -e "name=wordpress-161 ip=192.168.0.161"
 ```
-Все что остается сделать, это перейти по ссылке `http://wordpress-161.localdomain` и задать логин/пароль администратора сайта.
+After you going to `http://wordpress-161.localdomain` and set admin login/password for WordPress.
 
-Создание нескольких контейнеров
--------------------------------
+Multiple containers creating
+----------------------------
 ```bash
 cd /etc/ansible
 ./create_cts.sh
@@ -29,7 +42,7 @@ Available IP's: 5. You want to create 3 containers. Continue.
 ...
 ```
 
-Удаление контейнера
+Containers deleting
 -------------------
 ```bash
 cd /etc/ansible
@@ -38,6 +51,6 @@ Print container name: wordpress-161
 ...
 ```
 
-Лицензия
---------
+License
+-------
 [GNU GPLv3](http://www.gnu.org/licenses/gpl)
